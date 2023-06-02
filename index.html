@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>A Ring's Journey</title>
+</head>
+
+<body>
+  <div class="history-container">
+    <div class="accordion">
+      <dl id="history">
+      </dl>
+    </div>
+  </div>
+  <div class="input-container">
+    <div class="step-input">
+      <input id="stepInput" type="number" min="0" placeholder="0"/>
+      <button id="submitButton" type="button">Submit</button>
+    </div>
+    <input id="dateInput" class="date-input" type="date" />
+  </div>
+  <div id="headerCard" class="header-card" style="background-image: url(../assets/TomsHouse.png);">
+    <div id="totalDistanceDisplay" class="numberDisplay">
+      <div id="distance-fill" class="distance-fill"></div>
+      <span id="totalSteps">0</span>
+      <span id="totalMeters">0km</span>
+    </div>
+    <div id="todayDistanceDisplay" class="secondaryNumberDisplay">
+      <span id="todaySteps">0</span>
+      <span id="todayMeters">0m</span>
+    </div>
+
+  </div>
+
+  <script type="module" src="/src/main.ts"></script>
+
+</body>
+
+</html>

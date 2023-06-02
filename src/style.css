@@ -1,0 +1,325 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background-image: url(../assets/backgrounds/00035-553584982.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+#app {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.card {
+  padding: 2em;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #f9f9f9;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+
+button:hover {
+  border-color: #646cff;
+}
+
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+
+
+.sticky-top {
+  position: sticky;
+  top: 0;
+  z-index: 1020;
+}
+
+.header-card {
+  position: absolute;
+  bottom: 0;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 30vh;
+  width: 100vw;
+}
+
+.numberDisplay {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  border-radius: 8px;
+  backdrop-filter: blur(10px) opacity(0.8) saturate(180%) contrast(80%);
+  margin: 1rem;
+  width: 70%;
+  max-width: 300px;
+  height: 100%;
+  max-height: 300px;
+  color: #f9f9f9;
+  /* add blurred text outline */
+  text-shadow: #000000 1px 0 10px;
+
+  
+}
+
+.numberDisplay span {
+  font-size: 1.5rem;
+  font-weight: 500;
+  text-align: center;
+}
+
+.secondaryNumberDisplay {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 1rem;
+  width: 100%;
+  max-width: 300px;
+  height: 100%;
+  max-height: 300px;
+  color: #f9f9f9;
+  text-shadow: #000000 1px 0 10px;
+}
+
+.secondaryNumberDisplay span {
+  font-size: 1rem;
+  font-weight: 500;
+  text-align: center;
+}
+
+.input-container {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  bottom: 30vh;
+  width: min(80vw, 400px);
+  left:0;
+  right:0;
+
+  margin-left: auto;
+  margin-right: auto;
+  height: 12vh;
+  gap: 1vh;
+}
+
+.step-input {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  gap: 1rem;
+  height: 34px;
+}
+
+.date-input {
+  width: min(80vw, 400px);
+  height: 34px;
+  padding: 8px 18px;
+}
+
+input{
+  border:none;
+  outline:none;
+  display:inline-block;
+  position:relative;
+  border-radius:22px;
+  box-sizing:border-box;
+  padding:0 18px; 
+}
+
+/* list container with simple list styling*/
+
+.history-container {
+  position: absolute;
+  top: 0;
+  left:0;
+  right:0;
+
+  margin-left: auto;
+  margin-right: auto;
+  height: 58vh;
+  width: min(80vw, 400px);
+  overflow: scroll;
+
+}
+
+.history-container::-webkit-scrollbar {
+  display: none;
+}
+
+.distance-history-display {
+  list-style-type: none;
+}
+
+.accordion dl {
+  &:after {
+    content: "";
+    display: block;
+    height: 0em;
+    width: 100%;
+    border-radius: 8px;
+    background-color: tomato;
+  }
+}
+
+.accordion p {
+  padding:1em 2em 1em 2em;
+}
+
+
+.accordion dd {
+  background-color: #eee;
+  font-size: 1em;
+  line-height: 1.5em;
+  border: none;
+  margin: 5px;
+}
+
+
+.accordion {
+  position: relative;
+  width: 100%;
+}
+
+.accordionTitle {
+  border-radius: 8px;
+  backdrop-filter: blur(10px) opacity(0.8) saturate(180%) contrast(80%);
+  text-align: center;
+  font-weight: 700;
+  padding: 2em;
+  display: block;
+  text-decoration: none;
+  color: #fff;
+  transition: background-color 0.5s ease-in-out;
+  border-radius: 8px;
+
+  &:before {
+    content: "+";
+    font-size: 1.5em;
+    line-height: 0.5em;
+    float: left;
+    transition: transform 0.3s ease-in-out;
+  }
+}
+
+.accordionTitle.is-expanded {
+  &:before {
+
+    transform: translate(0%, 50%) rotate(-180deg);
+  }
+}
+
+.accordionItem {
+  height: auto;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+
+  max-height: 50em;
+  transition: max-height 1s;
+
+
+  @media screen and (min-width:48em) {
+    max-height: 15em;
+    transition: max-height 0.5s
+  }
+
+
+}
+
+.accordionItem.is-collapsed {
+  max-height: 0;
+}
+
+.no-js .accordionItem.is-collapsed {
+  max-height: auto;
+}
+
+.animateIn {
+  animation: accordionIn 0.45s normal ease-in-out both 1;
+}
+
+.animateOut {
+  animation: accordionOut 0.45s alternate ease-in-out both 1;
+}
+
+@keyframes accordionIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.9) rotateX(-60deg);
+    transform-origin: 50% 0;
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes accordionOut {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(0.9) rotateX(-60deg);
+  }
+}
+
+.distance-fill {
+  position: absolute;
+  background-color: #646cff;
+  border-radius: 8px;
+  height: 100%;
+  left: 0;
+  z-index: -1;
+}
